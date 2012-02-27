@@ -1,0 +1,28 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Fabien AMICO</title>
+ <link href="http://fabienamico.github.com/entries.xml" rel="self"/>
+ <link href="http://fabienamico.github.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://fabienamico.github.com/</id>
+ <author>
+   <name>Fabien AMICO</name>
+   <email>fabienamico@gmail.com</email>
+ </author>
+
+ {% for post in site.posts limit:50 %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://fabienamico.github.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://fabienamico.github.com{{ post.id }}</id>
+   <content type="html">&lt;p&gt;Please subscribe my new blog posts &lt;a href="http://feeds.feedburner.com/fabienamico"&gt;http://feeds.feedburner.com/fabienamico&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ {% endfor %}
+
+</feed>
+
